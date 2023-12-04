@@ -3,7 +3,10 @@ FROM ubuntu:22.04
 RUN apt-get update && \
     apt-get install -y shellinabox && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    apt update && \
+    apt upgrade && \
+    apt install -y python2 wget curl
 
 RUN echo 'root:root' | chpasswd
 
